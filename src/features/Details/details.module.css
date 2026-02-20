@@ -80,3 +80,53 @@
     top: 10px;
   }
 }
+
+/* Stats section */
+.statsSection {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.statsTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.statName {
+  min-width: 120px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  color: var(--text-color, #555);
+}
+
+.statValue {
+  min-width: 32px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+.statBar {
+  flex: 1;
+  height: 8px;
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #4caf50, #a5d6a7);
+  transition: width 0.4s ease;
+}

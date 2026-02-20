@@ -59,10 +59,23 @@ export default function Details() {
                 .map((ability) => ability.ability.name)
                 .join(", ")}
             </p>
-            <p>
-              Stats :&nbsp;
-              {pokemonDetails.stats.map((stat) => stat.stat.name).join(", ")}
-            </p>
+            <div className={style.statsSection}>
+              <p className={style.statsTitle}>Stats</p>
+              {pokemonDetails.stats.map((stat) => (
+                <div className={style.statRow} key={stat.stat.name}>
+                  <span className={style.statName}>{stat.stat.name}</span>
+                  <span className={style.statValue}>{stat.base_stat}</span>
+                  <div className={style.statBar}>
+                    <div
+                      className={style.statBarFill}
+                      style={{
+                        width: `${Math.min((stat.base_stat / 255) * 100, 100)}%`,
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           {/* Back Button */}
           <Link to={"/"} className={style.backButton}>
